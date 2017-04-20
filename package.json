@@ -5,7 +5,9 @@
   "author": "strothj <jason@jasons.io>",
   "private": true,
   "dependencies": {
-    "nuxt": "latest"
+    "node-sass": "^4.5.2",
+    "nuxt": "latest",
+    "sass-loader": "^6.0.3"
   },
   "scripts": {
     "dev": "nuxt",

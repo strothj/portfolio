@@ -1,0 +1,13 @@
+$tablet-width: 768px;
+
+@mixin handset-only {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
