@@ -6,7 +6,7 @@
     <div class="form-line">
       <input type="text" name="name" placeholder="Name" required>
       <input type="email" name="_replyto" placeholder="Email" required>
-      <input type="email" name="_replyto" placeholder="Phone">
+      <input type="text" name="phone" placeholder="Phone">
     </div>
     <div class="form-line">
       <textarea name="message" id="message" cols="30" rows="5" placeholder="Message" required></textarea>
