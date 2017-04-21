@@ -57,8 +57,13 @@ nav {
 
 .navbar-contents {
   display: flex;
+  flex-wrap: wrap;
   height: $navbar-height;
   align-items: center;
+
+  @include tablet {
+    flex-wrap: nowrap;
+  }
 }
 
 .navbar-spacing {

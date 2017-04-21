@@ -25,6 +25,9 @@ export default {
 @import '~assets/css/colors';
 
 ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
   padding: 0;
   margin: 0;
 }
