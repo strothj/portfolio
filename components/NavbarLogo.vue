@@ -1,14 +1,18 @@
 <template>
   <div class="brand">
     <router-link :to="{ name: 'index' }">
-      <div><h1>Jason Strothmann</h1></div>
-      <div><h2>Full Stack Web Developer</h2></div>
+      <!--<div><h1>Jason Strothmann</h1></div>
+      <div><h2>Full Stack Web Developer</h2></div>-->
+      <img src="~assets/images/logo.png" alt="logo">
     </router-link>
   </div>
 </template>
 
 <style scoped>
-h1, h2 {
+div {
+
+}
+/*h1, h2 {
   margin: 0;
   text-transform: uppercase;
   letter-spacing: .1rem;
@@ -34,5 +38,5 @@ a {
   height: 64px;
   flex-direction: column;
   justify-content: center;
-}
+}*/
 </style>

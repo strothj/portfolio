@@ -1,7 +1,7 @@
 <template>
   <section>
     <container>
-      <h1>My name is Jason Strothmann and I'm a full stack web developer in South Florida.</h1>
+      <!--<h1>My name is Jason Strothmann and I'm a full stack web developer in South Florida.</h1>-->
     </container>
   </section>
 </template>
@@ -18,11 +18,12 @@ export default {
 
 <style scoped lang="scss">
 @import '~assets/css/breakpoints.scss';
+@import '~assets/css/colors.scss';
 
 section {
   display: flex;
   align-items: center;
-  height: 95vh;
+  height: 75vh;
   background-image:
     linear-gradient(
       rgba(0, 0, 0, 0.7),
@@ -31,10 +32,10 @@ section {
     url(/images/hero-image.jpg);
   background-size: cover;
   background-attachment: fixed;
-  color: white;
+  color: $white;
 
   @include tablet {
-    height: 75vh;
+    height: 100vh;
   }
 }
 

@@ -26,7 +26,9 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import '~assets/css/colors';
+
 html {
   box-sizing: border-box;
 }
@@ -39,6 +41,7 @@ body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
- -moz-osx-font-smoothing: grayscale
+  -moz-osx-font-smoothing: grayscale;
+  color: $black;
 }
 </style>

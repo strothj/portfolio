@@ -1,7 +1,11 @@
 <template>
-  <nav :class="navClass">
+  <nav :class="landingPage ? 'nav--landing-page' : ''">
     <container>
-      <navbar-logo></navbar-logo>
+      <div class="navbar-contents">
+        <navbar-logo></navbar-logo>
+        <div class="navbar-spacing"></div>
+        <navbar-links></navbar-links>
+      </div>
     </container>
   </nav>
 </template>
@@ -9,42 +13,55 @@
 <script>
 import Container from './Container.vue';
 import NavbarLogo from './NavbarLogo.vue';
+import NavbarLinks from './NavbarLinks.vue';
 
 export default {
   data() {
-    return { hero: this.$route.name === 'index' };
+    return {
+      landingPage: this.$route.name === 'index',
+    };
   },
 
-  computed: {
-    navClass() {
-      return this.hero ? 'navbar--hero' : null;
+  watch: {
+    $route(newRoute) {
+      this.landingPage = newRoute.name === 'index';
     },
   },
 
   components: {
     Container,
     NavbarLogo,
+    NavbarLinks,
   },
 };
 </script>
 
 <style scoped lang="scss">
 @import '~assets/css/breakpoints.scss';
+@import '~assets/css/colors.scss';
+$navbar-height: 80px;
 
 nav {
   width: 100%;
-  height: 64px;
-  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.25);
+  height: $navbar-height;
+  border-bottom: solid 1px $border;
   z-index: 100;
-}
 
-.navbar--hero {
-  position: absolute;
-  color: white;
-  box-shadow: none;
-
-  @include tablet {
+  &.nav--landing-page {
+    position: absolute;
+    color: $white;
+    border-bottom: none;
     margin: 16px 0;
   }
+}
+
+.navbar-contents {
+  display: flex;
+  height: $navbar-height;
+  align-items: center;
+}
+
+.navbar-spacing {
+  flex-grow: 1;
 }
 </style>
