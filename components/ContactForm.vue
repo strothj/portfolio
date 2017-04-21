@@ -3,7 +3,8 @@
   <form
     name="contact"
     netlify
-    method="POST">
+  >
+    <!--method="POST">-->
     <div class="form-line">
       <input type="text" name="name" placeholder="Name" required>
       <input type="email" name="_replyto" placeholder="Email" required>
