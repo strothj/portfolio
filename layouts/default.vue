@@ -2,6 +2,7 @@
   <div>
     <header>
       <navbar></navbar>
+      <navbar-mobile-links></navbar-mobile-links>
     </header>
     <main>
       <nuxt/>
@@ -12,6 +13,7 @@
 
 <script>
 import Navbar from '~components/Navbar.vue';
+import NavbarMobileLinks from '~components/NavbarMobileLinks.vue';
 
 export default {
   head: {
@@ -22,6 +24,7 @@ export default {
 
   components: {
     Navbar,
+    NavbarMobileLinks,
   },
 };
 </script>

@@ -4,7 +4,7 @@
       <div class="navbar-contents">
         <navbar-logo></navbar-logo>
         <div class="navbar-spacing"></div>
-        <navbar-links></navbar-links>
+        <navbar-links class="navbar-links"></navbar-links>
       </div>
     </container>
   </nav>
@@ -14,19 +14,10 @@
 import Container from './Container.vue';
 import NavbarLogo from './NavbarLogo.vue';
 import NavbarLinks from './NavbarLinks.vue';
+import indexRouteMixin from './indexRouteMixin';
 
 export default {
-  data() {
-    return {
-      landingPage: this.$route.name === 'index',
-    };
-  },
-
-  watch: {
-    $route(newRoute) {
-      this.landingPage = newRoute.name === 'index';
-    },
-  },
+  mixins: [indexRouteMixin],
 
   components: {
     Container,
@@ -44,14 +35,28 @@ $navbar-height: 80px;
 nav {
   width: 100%;
   height: $navbar-height;
-  border-bottom: solid 1px $border;
   z-index: 100;
+
+  @include tablet {
+    border-bottom: solid 1px $border;
+  }
 
   &.nav--landing-page {
     position: absolute;
     color: $white;
     border-bottom: none;
-    margin: 16px 0;
+
+    @include tablet {
+      margin: 16px 0;
+    }
+  }
+}
+
+.navbar-links {
+  display: none;
+
+  @include tablet {
+    display: inherit;
   }
 }
 

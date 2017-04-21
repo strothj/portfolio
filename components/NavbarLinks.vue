@@ -22,6 +22,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '~assets/css/breakpoints';
 @import '~assets/css/colors';
 
 ul {
@@ -34,16 +35,24 @@ ul {
 
 li {
   display: inline-block;
-  padding: 20px 30px;
+  padding: 10px 15px;
   text-transform: uppercase;
+
+  @include tablet {
+    padding: 20px 30px;
+  }
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  font-size: .9rem;
+  font-size: .7rem;
   font-weight: 600;
   letter-spacing: .2rem;
+
+  @include tablet {
+    font-size: .9rem;
+  }
 }
 
 a:hover {
