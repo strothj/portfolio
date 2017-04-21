@@ -70,6 +70,16 @@ export default {
       font-size: 3rem;
     }
   }
+
+  div {
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1;}
+    }
+
+    animation-name: fadeIn;
+    animation-duration: 1s;
+  }
 }
 
 .hero-section__container {
