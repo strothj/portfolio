@@ -1,10 +1,8 @@
 <template>
-  <!--action="https://formspree.io/email@address.com"-->
   <form
-    name="contact"
-    netlify
+    action="https://formspree.io/contactform@jasons.io"
+    method="POST"
   >
-    <!--method="POST">-->
     <div class="form-line">
       <input type="text" name="name" placeholder="Name" required>
       <input type="email" name="_replyto" placeholder="Email" required>
