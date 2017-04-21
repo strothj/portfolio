@@ -1,6 +1,8 @@
 <template>
-  <section>
-    <container :thin="true">
+  <section class="hero-section">
+    <container class="hero-section__upper-spacing"></container>
+
+    <container class="hero-section__container" :thin="true">
       <header>
         <h1>Web applications done right.</h1>
       </header>
@@ -11,10 +13,15 @@
           If you are a business or developer, let me get in touch
           with you about your project.
         </p>
-        <div class="hero-section__contact-form">
-          <contact-form></contact-form>
-        </div>
       </main>
+    </container>
+
+    <container class="hero-section__contact-form" :thin="true">
+      <contact-form></contact-form>
+    </container>
+
+    <container class="hero-section__scroll-down-arrow">
+      <scroll-down-arrow class="scroll-down-arrow"></scroll-down-arrow>
     </container>
   </section>
 </template>
@@ -22,11 +29,13 @@
 <script>
 import Container from './Container.vue';
 import ContactForm from './ContactForm.vue';
+import ScrollDownArrow from './ScrollDownArrow.vue';
 
 export default {
   components: {
     Container,
     ContactForm,
+    ScrollDownArrow,
   },
 };
 </script>
@@ -35,47 +44,70 @@ export default {
 @import '~assets/css/breakpoints.scss';
 @import '~assets/css/colors.scss';
 
-section {
+.hero-section {
   display: flex;
-  height: 75vh;
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.9),
-      rgba(0, 0, 0, 0.9)
-    ),
-    url(/images/hero-image.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  color: $white;
+  flex-direction: column;
+  align-content: flex-end;
+  justify-content: center;
 
   @include tablet {
-    align-items: center;
     height: 100vh;
+    color: $white;
+    background-image:
+      linear-gradient(
+        rgba(0, 0, 0, 0.9),
+        rgba(0, 0, 0, 0.9)
+      ),
+      url(/images/hero-image.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+
+    @include tablet {
+      font-size: 3rem;
+    }
   }
 }
 
-h1 {
-  font-size: 1.5rem;
-
-  @include tablet {
-    font-size: 3rem;
-  }
+.hero-section__container {
+  flex: 1;
 }
 
-// Contact form wrapper
-.hero-section__contact-form {
+.hero-section__upper-spacing {
+  @extend .hero-section__container;
   display: none;
 
   @include tablet {
     display: inherit;
-    float: right;
-    max-width: 600px;
-    margin-top: 50px;
-    margin-right: 50px;
-
-    &::after {
-      clear: right;
-    }
   }
+}
+
+.hero-section__contact-form {
+  display: none;
+  justify-content: flex-end;
+  max-width: 600px;
+  padding-top: 50px !important;
+
+  @include tablet {
+    display: flex;
+  }
+}
+
+.hero-section__scroll-down-arrow {
+  @extend .hero-section__container;
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+
+  @include tablet {
+    display: flex;
+  }
+}
+
+.scroll-down-arrow {
+  width: 64px;
 }
 </style>

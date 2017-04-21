@@ -9,7 +9,7 @@
       <input type="text" name="phone" placeholder="Phone">
     </div>
     <div class="form-line">
-      <textarea name="message" id="message" cols="30" rows="5" placeholder="Message" required></textarea>
+      <textarea name="message" cols="30" rows="5" placeholder="Message" required></textarea>
     </div>
     <div class="form-line form-line--send">
       <button type="submit"><span>Send</span></button>
