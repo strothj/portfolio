@@ -11,7 +11,6 @@ export default {
   data() {
     return {
       links: [
-        // { name: 'index', title: 'Home' },
         { name: 'work', title: 'Work' },
         { name: 'about', title: 'About' },
         { name: 'contact', title: 'Contact' },

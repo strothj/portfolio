@@ -30,21 +30,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~assets/css/colors';
-
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-body {
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: $black;
-}
+@import '~assets/css/main';
 </style>

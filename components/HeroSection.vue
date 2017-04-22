@@ -3,26 +3,29 @@
     <container class="hero-section__upper-spacing"></container>
 
     <container class="hero-section__container" :thin="true">
-      <header>
-        <h1>Web applications done right.</h1>
-      </header>
-      <main>
-        <p>
-          I am a full stack web developer from the United States living in South Florida.
-          I enjoy transforming ideas into reality.
-          If you are a business or developer, let me get in touch
-          with you about your project.
-        </p>
-      </main>
+      <article>
+        <header>
+          <h1>Web applications done right.</h1>
+        </header>
+        <main>
+          <p>
+            I am a full stack web developer from the United States living in South Florida.
+            I enjoy transforming ideas into reality.
+            If you are a business or developer, let me get in touch
+            with you about your project.
+          </p>
+        </main>
+      </article>
     </container>
 
     <container class="hero-section__contact-form" :thin="true">
       <contact-form></contact-form>
     </container>
 
-    <container class="hero-section__scroll-down-arrow">
+    <!--<container class="hero-section__scroll-down-arrow">
       <scroll-down-arrow class="scroll-down-arrow"></scroll-down-arrow>
-    </container>
+    </container>-->
+    <container class="hero-section__upper-spacing"></container>
   </section>
 </template>
 
@@ -51,7 +54,8 @@ export default {
   justify-content: center;
 
   @include tablet {
-    height: 100vh;
+    height: 75vh;
+    min-height: 650px;
     color: $white;
     background-image:
       linear-gradient(
@@ -64,11 +68,14 @@ export default {
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-weight: 100;
+    margin-bottom: 30px;
+    letter-spacing: .1rem;
+  }
 
-    @include tablet {
-      font-size: 3rem;
-    }
+  p {
+    line-height: 25px;
+    letter-spacing: .1rem;
   }
 
   div {
