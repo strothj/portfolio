@@ -1,5 +1,5 @@
 $tablet-width: 768px;
-$desktop-width: 1367px;
+$desktop-width: 1025px;
 
 @mixin handset-only {
   @media (max-width: #{$tablet-width - 1px}) {
