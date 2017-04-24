@@ -1,5 +1,4 @@
-@import '~assets/css/breakpoints';
-@import '~assets/css/colors';
+@import '~assets/css/animations';
 
 html {
   box-sizing: border-box;
@@ -15,18 +14,4 @@ body {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $black;
-}
-
-h1 {
-  font-size: 1.5rem;
-  font-weight: 100;
-
-  @include tablet {
-    font-size: 3rem;
-  }
-}
-
-p {
-  font-size: 1rem;
 }

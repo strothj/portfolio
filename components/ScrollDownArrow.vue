@@ -7,40 +7,46 @@
   ------------------------------------------->
   <!---   MULTIPLE ELEMENT ANIMATION 3   ---->
 
-  <div id="multiple3">
+  <a href="#recent-work" v-scroll-to="'#recent-work, 50px'" @click.prevent>
+    <div id="multiple3">
 
-    <div class="scroll-arrow-container arrow1">
+      <div class="scroll-arrow-container arrow1">
 
-      <span class="arrow-left"></span>
-      <span class="arrow-right"></span>
+        <span class="arrow-left"></span>
+        <span class="arrow-right"></span>
+
+      </div>
+
+      <div class="scroll-arrow-container arrow2">
+
+        <span class="arrow-left"></span>
+        <span class="arrow-right"></span>
+
+      </div>
+
+      <div class="scroll-arrow-container arrow3">
+
+        <span class="arrow-left"></span>
+        <span class="arrow-right"></span>
+
+      </div>
+
+      <div class="scroll-arrow-container arrow4">
+
+        <span class="arrow-left"></span>
+        <span class="arrow-right"></span>
+
+      </div>
 
     </div>
-
-    <div class="scroll-arrow-container arrow2">
-
-      <span class="arrow-left"></span>
-      <span class="arrow-right"></span>
-
-    </div>
-
-    <div class="scroll-arrow-container arrow3">
-
-      <span class="arrow-left"></span>
-      <span class="arrow-right"></span>
-
-    </div>
-
-    <div class="scroll-arrow-container arrow4">
-
-      <span class="arrow-left"></span>
-      <span class="arrow-right"></span>
-
-    </div>
-
-  </div>
+  </a>
 </template>
 
 <style lang="scss">
+#multiple3 {
+  cursor: pointer;
+}
+
 /******************************************
 *					    											  		*
 *              	RUMILI                    *

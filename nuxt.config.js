@@ -1,4 +1,5 @@
 module.exports = {
+  plugins: [{ src: '~plugins/vue-scroll-to', ssr: false }],
   /*
   ** Headers of the page
   */
@@ -21,6 +22,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    vendor: 'vue-scroll-to',
     /*
     ** Run ESLINT on save
     */

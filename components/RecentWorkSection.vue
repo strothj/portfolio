@@ -1,8 +1,8 @@
 <template>
-  <section class="recent-work-section">
+  <section class="recent-work-section" id="recent-work">
     <container>
       <header>
-        <h1>Recent Work</h1>
+        <section-heading>Recent Work</section-heading>
       </header>
       <main>
         <div class="recent-work">
@@ -15,10 +15,12 @@
 
 <script>
 import Container from './Container.vue';
+import SectionHeading from './SectionHeading.vue';
 
 export default {
   components: {
     Container,
+    SectionHeading,
   },
 };
 </script>

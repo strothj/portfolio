@@ -1,5 +1,7 @@
 <template>
-  <nav :class="landingPage ? 'nav--landing-page' : ''">
+  <nav
+    :class="landingPage ? 'nav--landing-page animation-slow-fade-in' : ''"
+  >
     <container>
       <div class="navbar-contents">
         <navbar-logo></navbar-logo>

@@ -2,30 +2,20 @@
   <section class="hero-section">
     <container class="hero-section__upper-spacing"></container>
 
-    <container class="hero-section__container" :thin="true">
+    <container class="hero-section__hero-text" :thin="true">
       <article>
-        <header>
-          <h1>Web applications done right.</h1>
-        </header>
         <main>
-          <p>
-            I am a full stack web developer from the United States living in South Florida.
-            I enjoy transforming ideas into reality.
-            If you are a business or developer, let me get in touch
-            with you about your project.
-          </p>
+          <section-heading animation="slide-down">
+            My name is Jason Strothmann and I'm a web developer in
+            South Florida.
+          </section-heading>
         </main>
       </article>
     </container>
 
-    <container class="hero-section__contact-form" :thin="true">
-      <contact-form></contact-form>
-    </container>
-
-    <!--<container class="hero-section__scroll-down-arrow">
+    <container class="hero-section__scroll-down-arrow">
       <scroll-down-arrow class="scroll-down-arrow"></scroll-down-arrow>
-    </container>-->
-    <container class="hero-section__upper-spacing"></container>
+    </container>
   </section>
 </template>
 
@@ -33,17 +23,19 @@
 import Container from './Container.vue';
 import ContactForm from './ContactForm.vue';
 import ScrollDownArrow from './ScrollDownArrow.vue';
+import SectionHeading from './SectionHeading.vue';
 
 export default {
   components: {
     Container,
     ContactForm,
     ScrollDownArrow,
+    SectionHeading,
   },
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import '~assets/css/breakpoints.scss';
 @import '~assets/css/colors.scss';
 
@@ -54,38 +46,17 @@ export default {
   justify-content: center;
 
   @include tablet {
-    height: 75vh;
+    height: 100vh;
     min-height: 650px;
     color: $white;
     background-image:
       linear-gradient(
-        rgba(0, 0, 0, 0.9),
-        rgba(0, 0, 0, 0.9)
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
       ),
       url(/images/hero-image.jpg);
     background-size: cover;
     background-attachment: fixed;
-  }
-
-  h1 {
-    font-weight: 100;
-    margin-bottom: 30px;
-    letter-spacing: .1rem;
-  }
-
-  p {
-    line-height: 25px;
-    letter-spacing: .1rem;
-  }
-
-  div {
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1;}
-    }
-
-    animation-name: fadeIn;
-    animation-duration: 1s;
   }
 }
 
@@ -102,22 +73,11 @@ export default {
   }
 }
 
-.hero-section__contact-form {
-  display: none;
-  justify-content: flex-end;
-  max-width: 600px;
-  padding-top: 50px !important;
-
-  @include tablet {
-    display: flex;
-  }
-}
-
 .hero-section__scroll-down-arrow {
   @extend .hero-section__container;
   display: none;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-end;
 
   @include tablet {
     display: flex;
@@ -125,6 +85,8 @@ export default {
 }
 
 .scroll-down-arrow {
+  position: absolute;
   width: 64px;
+  height: 64px;
 }
 </style>
