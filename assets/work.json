@@ -1,9 +1,32 @@
 [
   {
+    "title": "Rapture Ready TV",
+    "job": "Database and Registration",
+    "slug": "rapture-ready-tv"
+  },
+  {
+    "title": "Portfolio Website",
+    "job": "Site Design",
+    "slug": "jasons-portfolio"
+  },
+  {
+    "title": "Pomoapp",
+    "job": "Application Development",
+    "slug": "pomoapp"
+  },
+  {
+    "title": "nxcms",
+    "job": "Application Development",
+    "slug": "nxcms"
+  },
+  {
     "title": "Twitch Split",
     "job": "Application Development",
-    "url": "/work/twitch-split",
-    "thumbnail": "/images/work/twitch-split-thumbnail.png",
-    "image": "/images/work/twitch-split.png"
+    "slug": "twitch-split"
+  },
+  {
+    "title": "Eatful",
+    "job": "Application Development",
+    "slug": "eatful"
   }
 ]
