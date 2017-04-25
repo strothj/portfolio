@@ -22,6 +22,7 @@ module.exports = {
         async: true,
         defer: true,
       },
+      { src: 'https://use.fontawesome.com/b75bd924b5.js' },
     ],
   },
   /*

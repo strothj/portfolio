@@ -14,7 +14,7 @@
     </container>
 
     <container class="hero-section__scroll-down-arrow">
-      <scroll-down-arrow class="scroll-down-arrow"></scroll-down-arrow>
+      <!--<scroll-down-arrow class="scroll-down-arrow"></scroll-down-arrow>-->
     </container>
   </section>
 </template>
@@ -46,7 +46,7 @@ export default {
   justify-content: center;
 
   @include tablet {
-    height: 100vh;
+    height: 75vh;
     min-height: 650px;
     color: $white;
     background-image:
