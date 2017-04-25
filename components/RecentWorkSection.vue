@@ -8,7 +8,7 @@
         <work-card-wrapper :work="recentWork"></work-card-wrapper>
       </main>
       <nav class="recent-work-section__view-more">
-        <circle-button to="/work">View More</circle-button>
+        <flat-button to="/work">View More</flat-button>
       </nav>
     </container>
   </section>
@@ -20,7 +20,7 @@ import recentWork from '~assets/recent-work.json';
 import Container from './Container.vue';
 import SectionHeading from './SectionHeading.vue';
 import WorkCardWrapper from './WorkCardWrapper.vue';
-import CircleButton from './CircleButton.vue';
+import FlatButton from './FlatButton.vue';
 
 export default {
   computed: {
@@ -33,7 +33,7 @@ export default {
     Container,
     SectionHeading,
     WorkCardWrapper,
-    CircleButton,
+    FlatButton,
   },
 };
 </script>

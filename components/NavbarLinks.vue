@@ -8,14 +8,17 @@
 
 <script>
 export default {
+  props: ['showHome'],
+
   data() {
-    return {
-      links: [
-        { name: 'work', title: 'Work' },
-        { name: 'about', title: 'About' },
-        { name: 'contact', title: 'Contact' },
-      ],
-    };
+    const links = [
+      { name: '/work', title: 'Work' },
+      { name: '/about', title: 'About' },
+      { name: '/contact', title: 'Contact' },
+    ];
+
+    if (this.showHome) links.unshift({ name: '/', title: 'Home' });
+    return { links };
   },
 };
 </script>

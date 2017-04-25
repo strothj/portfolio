@@ -16,17 +16,12 @@ export default {
 @import '~assets/css/colors';
 
 .circle-button {
-  background-color: transparent;
-  border: solid 2px $black;
-  border-radius: 50px;
-  font-size: 1.125rem;
   padding: 1rem 2rem;
+  font-size: 1.125rem;
   cursor: pointer;
-  transition: .2s color, .2s border-color;
-
-  &:hover {
-    color: $accent;
-    border-color: $accent;
-  }
+  color: $white;
+  border: solid 2px $accent;
+  background-color: $accent;
+  border-radius: 8px;
 }
 </style>

@@ -7,13 +7,14 @@
     <main>
       <nuxt/>
     </main>
-    <footer></footer>
+    <page-footer></page-footer>
   </div>
 </template>
 
 <script>
 import Navbar from '~components/Navbar.vue';
 import NavbarMobileLinks from '~components/NavbarMobileLinks.vue';
+import PageFooter from '~components/PageFooter.vue';
 
 export default {
   head: {
@@ -25,6 +26,7 @@ export default {
   components: {
     Navbar,
     NavbarMobileLinks,
+    PageFooter,
   },
 };
 </script>
