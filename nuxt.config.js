@@ -1,5 +1,8 @@
 module.exports = {
-  plugins: [{ src: '~plugins/vue-scroll-to', ssr: false }],
+  plugins: [
+    { src: '~plugins/vue-scroll-to', ssr: false },
+    { src: '~plugins/google-maps', ssr: false },
+  ],
   /*
   ** Headers of the page
   */
@@ -13,11 +16,18 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ],
+    script: [
+      {
+        src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC7VFSbagzmFhD-kBYxA710qw3LouIyU9s&callback=initMap',
+        async: true,
+        defer: true,
+      },
+    ],
   },
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#3B8070' },
+  loading: { color: '#F7941E' },
   /*
   ** Build configuration
   */

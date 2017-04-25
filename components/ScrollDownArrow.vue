@@ -7,7 +7,7 @@
   ------------------------------------------->
   <!---   MULTIPLE ELEMENT ANIMATION 3   ---->
 
-  <a href="#recent-work" v-scroll-to="'#recent-work, 50px'" @click.prevent>
+  <a href="#recent-work" v-scroll-to="'#recent-work, 0px'" @click.prevent>
     <div id="multiple3">
 
       <div class="scroll-arrow-container arrow1">
