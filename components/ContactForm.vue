@@ -55,6 +55,9 @@
     border: solid 2px $accent;
     background-color: transparent;
 
+    // Internet Explorer compatibility, otherwise button width becomes 0px.
+    min-width: 100px;
+
     &:hover {
       color: $white;
       background-color: $accent;

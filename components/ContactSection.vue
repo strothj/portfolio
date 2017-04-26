@@ -62,11 +62,12 @@ export default {
   }
 
   &__contact-form {
+    width: 100%;
     margin-top: 80px;
-    max-width: 600px;
 
     @include tablet {
       margin-top: 0;
+      max-width: 600px;
     }
   }
 }
