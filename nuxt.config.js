@@ -1,4 +1,9 @@
+const { join } = require('path');
+
 module.exports = {
+  css: [
+    { src: join(__dirname, 'assets/css/main.scss'), lang: 'scss' },
+  ],
   plugins: [
     { src: '~plugins/vue-scroll-to', ssr: false },
     { src: '~plugins/google-maps', ssr: false },
