@@ -1,12 +1,12 @@
 <template>
-  <nav
-    :class="landingPage ? 'nav--landing-page animation-slow-fade-in' : ''"
-  >
+  <nav :class="classes">
     <container>
-      <div class="navbar-contents">
+      <div class="navbar__contents">
         <navbar-logo></navbar-logo>
-        <div class="navbar-spacing"></div>
-        <navbar-links class="navbar-links"></navbar-links>
+        <div class="navbar__spacing"></div>
+        <div class="navbar__links">
+          <navbar-links></navbar-links>
+        </div>
       </div>
     </container>
   </nav>
@@ -21,6 +21,16 @@ import indexRouteMixin from './indexRouteMixin';
 export default {
   mixins: [indexRouteMixin],
 
+  computed: {
+    classes() {
+      const classes = ['navbar'];
+
+      if (this.landingPage) classes.push('navbar--landing-page', 'animation-slow-fade-in');
+
+      return classes;
+    },
+  },
+
   components: {
     Container,
     NavbarLogo,
@@ -29,51 +39,51 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import '~assets/css/breakpoints.scss';
 @import '~assets/css/colors.scss';
 $navbar-height: 80px;
 
-nav {
+.navbar {
   width: 100%;
-  height: $navbar-height;
+  height: $navbar-height - 10px;
+  background-color: $black;
   z-index: 100;
 
   @include tablet {
-    border-bottom: solid 1px $border;
+    height: $navbar-height;
   }
 
-  &.nav--landing-page {
-    position: absolute;
-    color: $white;
-    border-bottom: none;
-
+  &--landing-page {
     @include tablet {
+      position: absolute;
       margin: 16px 0;
+      background-color: transparent;
     }
   }
-}
 
-.navbar-links {
-  display: none;
+  &__links {
+    display: none;
+    color: $white;
 
-  @include tablet {
-    display: inherit;
+    @include tablet {
+      display: inherit;
+    }
   }
-}
 
-.navbar-contents {
-  display: flex;
-  flex-wrap: wrap;
-  height: $navbar-height;
-  align-items: center;
+  &__contents {
+    display: flex;
+    flex-wrap: wrap;
+    height: $navbar-height;
+    align-items: center;
 
-  @include tablet {
-    flex-wrap: nowrap;
+    @include tablet {
+      flex-wrap: nowrap;
+    }
   }
-}
 
-.navbar-spacing {
-  flex-grow: 1;
+  &__spacing {
+    flex-grow: 1;
+  }
 }
 </style>

@@ -12,10 +12,13 @@ html {
 
 body {
   margin: 0;
-  // font-family: 'Open Sans', sans-serif;
   font-family: 'Quicksand', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $black;
   background-color: $background;
+}
+
+a {
+  outline: 0;
 }

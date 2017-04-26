@@ -1,5 +1,5 @@
 <template>
-  <nav :class="landingPage ? 'nav-links--landing-page' : ''">
+  <nav :class="classes">
     <navbar-links></navbar-links>
   </nav>
 </template>
@@ -11,19 +11,30 @@ import indexRouteMixin from './indexRouteMixin';
 export default {
   mixins: [indexRouteMixin],
 
+  computed: {
+    classes() {
+      const classes = ['navbar-mobile-links'];
+
+      if (this.landingPage) classes.push('navbar-mobile-links--landing-page');
+
+      return classes;
+    },
+  },
+
   components: {
     NavbarLinks,
   },
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import '~assets/css/breakpoints';
+@import '~assets/css/colors';
 
-nav {
-  &.nav-links--landing-page {
-    padding-top: 80px;
-  }
+.navbar-mobile-links {
+  color: $white;
+  background-color: $black;
+  padding-bottom: 25px;
 
   @include tablet {
     display: none;
