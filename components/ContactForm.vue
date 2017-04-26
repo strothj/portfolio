@@ -1,65 +1,75 @@
 <template>
   <form
+    class="contact-form"
     action="https://formspree.io/contactform@jasons.io"
     method="POST"
   >
-    <div class="form-line">
+    <div class="contact-form__row">
       <input type="text" name="name" placeholder="Name" required>
       <input type="email" name="_replyto" placeholder="Email" required>
       <input type="text" name="phone" placeholder="Phone">
     </div>
-    <div class="form-line">
+    <div class="contact-form__row">
       <textarea name="message" cols="30" rows="5" placeholder="Message" required></textarea>
     </div>
-    <div class="form-line form-line--send">
+    <div class="contact-form__send-row">
       <button type="submit"><span>Send</span></button>
     </div>
   </form>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
+@import '~assets/css/breakpoints';
 @import '~assets/css/colors';
 
-form {
+.contact-form {
   font-size: 1rem;
-}
 
-input, textarea, button {
-  flex: 1;
-  width: 33%;
-  padding: 12px 24px;
-  margin: 10px 10px 10px 0;
-  font-family: inherit;
-  font-weight: 600;
-  font-size: inherit;
-  border: none;
-  border-radius: 5px;
-  background-color: $white;
-}
+  input, textarea, button {
+    width: 100%;
+    padding: 12px 24px;
+    margin: 10px 10px 10px 0;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: inherit;
+    border: none;
+    border-radius: 5px;
+    background-color: $white;
 
-.form-line {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-
-  &--send {
-    justify-content: flex-end;
-
-    button {
-      flex: 0;
-      cursor: pointer;
-      color: $accent;
-      // font-size: 1.0rem;
-      letter-spacing: .2rem;
-      border: solid 2px $accent;
-      background-color: transparent;
-
-      &:hover {
-        // color: $black;
-        color: $white;
-        background-color: $accent;
-      }
+    // Layout text inputs side by side on high resolution.
+    @include desktop {
+      flex: 1;
+      width: 33%;
     }
+  }
+
+  // Firefox compatibility, allow forms to shrink more than the browser default
+  // minimum input box width.
+  input { min-width: 0; }
+
+  button {
+    flex: 0;
+    cursor: pointer;
+    color: $accent;
+    letter-spacing: .2rem;
+    border: solid 2px $accent;
+    background-color: transparent;
+
+    &:hover {
+      color: $white;
+      background-color: $accent;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__send-row {
+    display: flex;
+    justify-content: flex-end;
   }
 }
 </style>
