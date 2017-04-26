@@ -22,14 +22,14 @@
 <script>
 import Container from './Container.vue';
 import ContactForm from './ContactForm.vue';
-import ScrollDownArrow from './ScrollDownArrow.vue';
+// import ScrollDownArrow from './ScrollDownArrow.vue';
 import SectionHeading from './SectionHeading.vue';
 
 export default {
   components: {
     Container,
     ContactForm,
-    ScrollDownArrow,
+    // ScrollDownArrow,
     SectionHeading,
   },
 };
