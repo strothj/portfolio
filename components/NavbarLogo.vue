@@ -28,6 +28,11 @@
 
   h1 {
     font-weight: 100;
+
+    strong {
+      // For Internet Explorer/Firefox compatibility.
+      font-weight: 600;
+    }
   }
 }
 </style>
