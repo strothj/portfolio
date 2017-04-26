@@ -1,4 +1,4 @@
-const calculateAnimationClasses = (animation) => {
+const calculateAnimationClasses = animation => {
   if (!animation) return '';
 
   return `animation-${animation}`;

@@ -25,7 +25,8 @@ export default {
     classes() {
       const classes = ['navbar'];
 
-      if (this.landingPage) classes.push('navbar--landing-page', 'animation-slow-fade-in');
+      if (this.landingPage)
+        classes.push('navbar--landing-page', 'animation-slow-fade-in');
 
       return classes;
     },

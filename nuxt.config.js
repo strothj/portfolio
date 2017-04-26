@@ -1,9 +1,7 @@
 const { join } = require('path');
 
 module.exports = {
-  css: [
-    { src: join(__dirname, 'assets/css/main.scss'), lang: 'scss' },
-  ],
+  css: [{ src: join(__dirname, 'assets/css/main.scss'), lang: 'scss' }],
   plugins: [
     { src: '~plugins/vue-scroll-to', ssr: false },
     { src: '~plugins/google-maps', ssr: false },
@@ -16,11 +14,18 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Portfolio website of Jason Strothmann. Full Stack Web Developer.' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Portfolio website of Jason Strothmann. Full Stack Web Developer.',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Quicksand' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Quicksand',
+      },
     ],
     script: [
       {

@@ -23,7 +23,8 @@ export default {
       styles,
       scrollwheel: false,
     });
-    new google.maps.Marker({ // eslint-disable-line no-new
+    // eslint-disable-next-line no-new
+    new google.maps.Marker({
       position: { lat: 26.2445, lng: -80.2064 },
       map: this.map,
       title: 'Margate, FL',
