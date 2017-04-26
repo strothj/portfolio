@@ -24,6 +24,7 @@ export default {
 
 .work-card {
   width: 100%;
+  max-width: 350px;
   margin: 15px;
   text-align: center;
 
