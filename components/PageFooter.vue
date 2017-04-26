@@ -45,7 +45,7 @@ export default {
   }
 
   &__nav-links {
-    max-width: 500px;
+    max-width: 550px;
   }
 
   &__copyright {

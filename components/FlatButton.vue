@@ -17,6 +17,7 @@ export default {
 
 .circle-button {
   padding: 1rem 2rem;
+  font-family: inherit;
   font-size: 1.125rem;
   cursor: pointer;
   color: $white;

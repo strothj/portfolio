@@ -17,12 +17,6 @@ import NavbarMobileLinks from '~components/NavbarMobileLinks.vue';
 import PageFooter from '~components/PageFooter.vue';
 
 export default {
-  head: {
-    link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans' },
-    ],
-  },
-
   components: {
     Navbar,
     NavbarMobileLinks,

@@ -1,9 +1,13 @@
 <template>
-  <article>
-    <section-heading>My Work</section-heading>
-    <container>
-      <work-card-wrapper :work="work"></work-card-wrapper>
-    </container>
+  <article class="work-page">
+    <header class="work-page__header">
+      <section-heading>My Work</section-heading>
+    </header>
+    <main>
+      <container>
+        <work-card-wrapper :work="work"></work-card-wrapper>
+      </container>
+    </main>
   </article>
 </template>
 
@@ -25,3 +29,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.work-page {
+  &__header {
+    text-align: center;
+  }
+}
+</style>

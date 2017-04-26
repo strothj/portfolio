@@ -1,6 +1,6 @@
 <template>
   <div :class="animationClasses">
-    <h1 class="heading">
+    <h1 class="section-heading">
       <slot></slot>
     </h1>
   </div>
@@ -17,10 +17,9 @@ export default {
 <style lang="scss">
 @import '~assets/css/breakpoints';
 
-.heading {
+.section-heading {
   font-size: 1.5rem;
   font-weight: 100;
-  text-align: center;
 
   @include tablet {
     font-size: 3rem;
