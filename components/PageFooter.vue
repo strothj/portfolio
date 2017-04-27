@@ -27,13 +27,17 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~assets/css/breakpoints';
 @import '~assets/css/colors';
 
 .footer {
-  margin-top: 100px;
   padding: 50px 0 25px 0;
   color: $white;
   background-color: $black;
+
+  @include tablet {
+    margin-top: 100px;
+  }
 
   &__social-buttons, &__nav-links, &__copyright {
     margin: 0 auto;

@@ -15,7 +15,10 @@ export default {
   },
 
   async mounted() {
-    await this.mapsApiLoaded;
+    // Delay map creation until Google Maps API is loaded and for a few seconds
+    // so page animations do not stutter.
+    const delayMapCreation = new Promise(resolve => setTimeout(resolve, 2000));
+    await Promise.all([this.mapApiLoaded, delayMapCreation]);
 
     this.map = new google.maps.Map(this.$refs.map, {
       center: { lat: 26.2445, lng: -80.2064 },
