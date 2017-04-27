@@ -1,15 +1,13 @@
 <template>
-  <div class="layout-flex-fix">
-    <div class="layout">
-      <header>
-        <navbar></navbar>
-        <navbar-mobile-links></navbar-mobile-links>
-      </header>
-      <main>
-        <nuxt/>
-      </main>
-      <page-footer></page-footer>
-    </div>
+  <div class="layout">
+    <header>
+      <navbar></navbar>
+      <navbar-mobile-links></navbar-mobile-links>
+    </header>
+    <main>
+      <nuxt/>
+    </main>
+    <page-footer></page-footer>
   </div>
 </template>
 
@@ -28,16 +26,29 @@ export default {
 </script>
 
 <style lang="scss">
-// Internet Explorer compatibility fix. For flex-column, it needs to be wrapped
-// in a flex-row container to properly calculate height.
-.layout-flex-fix {
+// IE Flexbox Fix
+html { min-height: 100vh; }
+body { min-height: 100vh; }
+#__nuxt {
   display: flex;
   width: 100%;
+  height: 100%;
+
+  .layout {
+    flex: 1;
+  }
 }
 
 .layout {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  min-height: 100vh;
+  max-width: 100vw;
+
+  > main {
+    display: block;
+    // flex-basis set to auto for IE
+    flex: 1 1 auto;
+  }
 }
 </style>
