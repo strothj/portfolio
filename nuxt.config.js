@@ -1,4 +1,5 @@
 const { join } = require('path');
+const work = require('./assets/work.json');
 
 module.exports = {
   css: [{ src: join(__dirname, 'assets/css/main.scss'), lang: 'scss' }],
@@ -58,5 +59,9 @@ module.exports = {
         });
       }
     },
+  },
+  // Generate static pages for work pages
+  generate: {
+    routes: work.map(w => `/work/${w.slug}`),
   },
 };
