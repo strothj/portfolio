@@ -4793,10 +4793,6 @@ vue-router@^2.3.1:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-2.4.0.tgz#56a635e1434a1966ac095f2a485bebdcfc36cec5"
 
-vue-scroll-to@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/vue-scroll-to/-/vue-scroll-to-2.0.1.tgz#b232e3330788e094f96818542c47c8062826f93c"
-
 vue-server-renderer@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/vue-server-renderer/-/vue-server-renderer-2.2.6.tgz#0a20535544b6948bca076380d058e19bb1304eef"

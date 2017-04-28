@@ -3,10 +3,7 @@ const work = require('./assets/work.json');
 
 module.exports = {
   css: [{ src: join(__dirname, 'assets/css/main.scss'), lang: 'scss' }],
-  plugins: [
-    { src: '~plugins/vue-scroll-to', ssr: false },
-    { src: '~plugins/google-maps', ssr: false },
-  ],
+  plugins: [{ src: '~plugins/google-maps', ssr: false }],
   /*
   ** Headers of the page
   */
@@ -45,7 +42,6 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: 'vue-scroll-to',
     /*
     ** Run ESLINT on save
     */
@@ -63,5 +59,12 @@ module.exports = {
   // Generate static pages for work pages
   generate: {
     routes: work.map(w => `/work/${w.slug}`),
+  },
+  // Set scroll position to page top
+  router: {
+    scrollBehavior(to, from, savedPosition) {
+      if (savedPosition) return savedPosition;
+      return { x: 0, y: 0 };
+    },
   },
 };

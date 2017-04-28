@@ -1,5 +1,5 @@
 <template>
-  <section class="recent-work-section" id="recent-work">
+  <section class="recent-work-section">
     <container>
       <header>
         <section-heading>Recent Work</section-heading>
