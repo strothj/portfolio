@@ -1,2 +1,6 @@
 [build]
+command = "yarn & yarn build"
 functions = "packages/portfolio-functions/dist"
+
+[build.environment]
+YARN_VERSION = "1.5.1"
