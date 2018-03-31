@@ -11,6 +11,8 @@
     "object-literal-sort-keys": false,
     "interface-name": [true, "never-prefix"],
     "variable-name": false,
+    "import-name": false,
+    "no-submodule-imports": [true, "components"],
     "no-implicit-dependencies": [true, "dev"],
     "prettier": true
   }

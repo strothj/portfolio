@@ -1,9 +1,0 @@
-{
-  "presets": [["env", { "targets": { "node": "6.10" } }]],
-  "plugins": [
-    "transform-class-properties",
-    "transform-object-assign",
-    "transform-object-rest-spread",
-    "@babel/plugin-transform-typescript"
-  ]
-}

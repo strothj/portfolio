@@ -1,6 +1,7 @@
 [build]
-command = "yarn & yarn build"
-functions = "packages/portfolio-functions/dist"
+command = "yarn && yarn build && mv packages/components/dist packages/app/dist/storybook"
+publish = "packages/app/dist"
+functions = "packages/functions/dist"
 
 [build.environment]
 YARN_VERSION = "1.5.1"
