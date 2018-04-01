@@ -12,6 +12,9 @@
     "interface-name": [true, "never-prefix"],
     "variable-name": false,
     "import-name": false,
+    "no-object-literal-type-assertion": false,
+    "prefer-array-literal": false,
+    "array-type": false,
     "no-submodule-imports": [true, "components"],
     "no-implicit-dependencies": [true, "dev"],
     "prettier": true
