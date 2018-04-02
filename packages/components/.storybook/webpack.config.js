@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = (baseConfig, env, config) => {
   const componentPaths = getComponentFolderPaths();
@@ -15,6 +16,13 @@ module.exports = (baseConfig, env, config) => {
 
   config.resolve.extensions.push(".ts", ".tsx");
 
+  config.plugins.push(
+    new Dotenv({
+      silent: true,
+      path: path.resolve(__dirname, "../../app/.env"),
+    }),
+  );
+
   return config;
 };
 
@@ -23,5 +31,6 @@ function getComponentFolderPaths() {
     .readdirSync(path.resolve(__dirname, ".."))
     .filter(d => ![".storybook", "node_modules", "dist"].includes(d))
     .map(d => path.resolve(__dirname, "..", d))
-    .filter(d => fs.lstatSync(d).isDirectory());
+    .filter(d => fs.lstatSync(d).isDirectory())
+    .concat(path.resolve(__dirname, "../../styled"));
 }

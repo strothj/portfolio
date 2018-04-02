@@ -15,6 +15,7 @@
     "no-object-literal-type-assertion": false,
     "prefer-array-literal": false,
     "array-type": false,
+    "member-access": false,
     "no-submodule-imports": [true, "components"],
     "no-implicit-dependencies": [true, "dev"],
     "prettier": true
