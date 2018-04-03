@@ -27,7 +27,7 @@ module.exports = {
     ],
     script: [
       {
-        src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC7VFSbagzmFhD-kBYxA710qw3LouIyU9s&callback=initMap',
+        src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCm5EZcm-i3ysyO_HI0sdEGX_I_miyNr1M&callback=initMap',
         async: true,
         defer: true,
       },
