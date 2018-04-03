@@ -1,6 +1,7 @@
 import React, { StrictMode } from "react";
 import { configure, addDecorator } from "@storybook/react";
 import { setDefaults } from "@storybook/addon-info";
+import { withKnobs } from "@storybook/addon-knobs";
 import { ThemeProvider } from "styled";
 
 addDecorator(story => (
@@ -8,6 +9,7 @@ addDecorator(story => (
     <ThemeProvider>{story()}</ThemeProvider>
   </StrictMode>
 ));
+addDecorator(withKnobs);
 
 setDefaults({
   inline: true,

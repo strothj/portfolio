@@ -1,61 +1,29 @@
 import React, { Component, SFC } from "react";
 import styled from "styled";
 import { GoogleMapsApiConsumer } from "../GoogleMapsApi";
-import mapStyles from "./mapStyles.json";
+import LoadingPlaceholder from "./LoadingPlaceholder";
+import createMap from "./createMap";
 
-interface HeroGoogleMapProps {
-  googleMapsApiLoaded: boolean;
-}
-
-class HeroGoogleMap extends Component<HeroGoogleMapProps> {
-  private static createMap = (div: HTMLDivElement) => {
-    const map = new google.maps.Map(div, {
-      styles: mapStyles,
-      center: { lat: 26.2445, lng: -80.2064 },
-      zoom: 9,
-      scrollwheel: false,
-    });
-
-    // tslint:disable-next-line:no-unused-expression
-    new google.maps.Marker({
-      map,
-      position: { lat: 26.2445, lng: -80.2064 },
-      title: "Margate, FL",
-    });
-  };
-
+class HeroGoogleMap extends Component {
   private div: HTMLDivElement | null = null;
 
   componentDidMount() {
-    if (this.props.googleMapsApiLoaded) HeroGoogleMap.createMap(this.div!);
-  }
-
-  componentDidUpdate(prevProps: HeroGoogleMapProps) {
-    if (
-      !this.props.googleMapsApiLoaded ||
-      prevProps.googleMapsApiLoaded === this.props.googleMapsApiLoaded
-    ) {
-      return;
-    }
-    HeroGoogleMap.createMap(this.div!);
+    createMap(this.div!);
   }
 
   render() {
-    return (
-      <GoogleMapDiv
-        innerRef={c => {
-          this.div = c;
-        }}
-      >
-        {this.props.googleMapsApiLoaded ? null : "Loading"}
-      </GoogleMapDiv>
-    );
+    // prettier-ignore
+    return <GoogleMapDiv innerRef={c => { this.div = c; }} />
   }
 }
 
-const HeroGoogleMapContainer: SFC<{}> = () => (
+/**
+ * Display a Google Map near my location to provide a backdrop for the hero
+ * section of the portfolio landing page.
+ */
+export const HeroGoogleMapContainer: SFC<{}> = () => (
   <GoogleMapsApiConsumer>
-    {({ loaded }) => <HeroGoogleMap googleMapsApiLoaded={loaded} />}
+    {({ loaded }) => (loaded ? <HeroGoogleMap /> : <LoadingPlaceholder />)}
   </GoogleMapsApiConsumer>
 );
 
