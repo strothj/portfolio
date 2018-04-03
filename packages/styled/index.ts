@@ -1,3 +1,2 @@
-export * from "./styled";
-export { default } from "./styled";
-export { default as ThemeProvider } from "./ThemeProvider";
+export * from "./src";
+export { default } from "./src";

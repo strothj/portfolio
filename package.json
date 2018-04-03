@@ -8,8 +8,7 @@
     "yarn": ">= 1.5.1"
   },
   "pre-commit": [
-    "lint",
-    "build"
+    "lint"
   ],
   "scripts": {
     "start": "lerna run --parallel start",

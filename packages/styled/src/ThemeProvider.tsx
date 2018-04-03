@@ -35,5 +35,6 @@ injectGlobal`
   body {
     font-family: 'Raleway', sans-serif;
     font-size: 14px;
+    margin: 0;
   }
 `;

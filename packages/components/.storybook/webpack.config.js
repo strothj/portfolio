@@ -1,13 +1,14 @@
 const fs = require("fs");
 const path = require("path");
 const Dotenv = require("dotenv-webpack");
+const findMonorepo = require("react-dev-utils/workspaceUtils").findMonorepo;
 
 module.exports = (baseConfig, env, config) => {
-  const componentPaths = getComponentFolderPaths();
+  const srcPaths = getSrcPaths();
 
   config.module.rules.push({
     test: /\.tsx?$/,
-    include: componentPaths,
+    include: srcPaths,
     use: [
       require.resolve("ts-loader"),
       require.resolve("react-docgen-typescript-loader"),
@@ -26,11 +27,14 @@ module.exports = (baseConfig, env, config) => {
   return config;
 };
 
-function getComponentFolderPaths() {
-  return fs
-    .readdirSync(path.resolve(__dirname, ".."))
-    .filter(d => ![".storybook", "node_modules", "dist"].includes(d))
-    .map(d => path.resolve(__dirname, "..", d))
-    .filter(d => fs.lstatSync(d).isDirectory())
-    .concat(path.resolve(__dirname, "../../styled"));
+function getSrcPaths() {
+  let componentPaths;
+
+  componentPaths = [path.resolve(__dirname, "../src")];
+
+  // Dependencies from monorepo.
+  const mono = findMonorepo(path.resolve(__dirname, "..") /* appDirectory */);
+  componentPaths = [...componentPaths, ...mono.pkgs];
+
+  return componentPaths;
 }
